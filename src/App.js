@@ -3,10 +3,10 @@ import "./App.css";
 
 import moment from 'moment';
 import FormInput from "./components/FormInput";
-import { useAlert } from "react-alert"
+import { useAlert } from "react-alert";
 
 const App = () => {
-  const alert = useAlert()
+  const alert = useAlert();
 
   const [values, setValues] = useState({
     username: "",
@@ -71,11 +71,11 @@ const App = () => {
     e.preventDefault();
 
     const age = moment().diff(e.target[2].value, 'years');
-    if(!age) {
+    if (!age) {
       alert.error('Please enter a valid date!');
       return false;
-    } else if(age < 18) {
-      alert.error("Minimum age required for signup is 18!")
+    } else if (age < 18) {
+      alert.error("Minimum age required for signup is 18!");
       return false;
     }
 
@@ -94,7 +94,7 @@ const App = () => {
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
-        <h1>Sign up</h1><br/>
+        <h1>Sign up</h1><br />
         {inputs.map((input) => (
           <FormInput
             key={input.id}

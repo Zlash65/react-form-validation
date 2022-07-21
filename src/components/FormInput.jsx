@@ -7,7 +7,7 @@ const FormInput = (props) => {
 
   const handleFocus = (e) => {
     const value = e.target.value;
-    if(value.length > 0) {
+    if (value.length > 0) {
       setFocused(true);
     } else {
       setFocused(false);
