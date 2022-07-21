@@ -70,8 +70,11 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const age = moment().diff(e.target[0].value, 'years');
-    if(age < 18) {
+    const age = moment().diff(e.target[2].value, 'years');
+    if(!age) {
+      alert.error('Please enter a valid date!');
+      return false;
+    } else if(age < 18) {
       alert.error("Minimum age required for signup is 18!")
       return false;
     }
